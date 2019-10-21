@@ -1,23 +1,15 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './App.css';
-
-
 import Users from './User';
+import { Container } from 'react-bootstrap'
 
 
-
-
-
-class App extends  Component {
-
-    render(){
-    return(
-    <div className='container'>
-    <Users />
-     </div>
-         
-        )
-    }
+const App = () => {
+    return (
+        <Container>
+        <Users />
+        </Container>
+      );
 }
-
-export default App 
+ 
+export default App;

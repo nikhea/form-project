@@ -1,36 +1,43 @@
 import React, { Component } from 'react';
 import UserList from './UserList';
-import uuid from 'uuid'
 import Forms from './Forms';
 
 
 class Users extends Component {
-    state = {
-        Users: [{
-            id: uuid.v4(),
+  state = {
+      // create User data
+      Users: [
+        {
             FirstName: 'imonikhea',
             LastName: 'ugbodaga',
-            Birthday: '',
+            Birthday: '10/10/1997',
             Age: 29,
             Hobby: 'runing'
         }
         ]
-    }
-       
+  }
+  
+     //Attempt to create a addNewUser
      addUser = (newUser) => {
        let Users = [newUser, ...this.state.Users]
+      
        this.setState({
-         Users:Users
+       Users
        })
-     } 
+       } 
       
     render() { 
         return (
             <div>
-            <Forms addUser={this.addUser}/>     
-      <UserList
-       Users={this.state.Users} 
-    />
+            <Forms
+            // pass the addUser function as props to the form components
+            addUser={this.addUser} 
+            />     
+            
+            <UserList
+            // passing the users state as props to the UserList components
+            Users={this.state.Users} 
+            />
             </div>
           );
     }
