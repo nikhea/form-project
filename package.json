@@ -33,5 +33,5 @@
       "last 1 safari version"
     ]
   },
-  "scripts":{"lint": "eslint.", "lint:fix": "eslint. --fix"}
+
 }
