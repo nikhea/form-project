@@ -32,6 +32,15 @@ class Forms extends Component {
         }
         //Attempt to addNewUser
         this.props.addUser(newUser)
+
+      this.setState({
+        FirstName: '',
+        LastName: '',
+        Birthday: new Date(),
+        Age: '',
+        Hobby:''
+        
+        })
     }
     
     handelChange= (e) => {
