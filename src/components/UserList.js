@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap'
 
 const UserList = (props) => {
 
-    console.log(props.Users)
+    // console.log(props.Users)
     const users =props.Users.map((user, index) => (
     
       <tr key={index}>

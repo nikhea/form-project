@@ -13,7 +13,7 @@ class Forms extends Component {
 		}
 		
 		handleChange = (e) => {
-		console.log(typeof e)
+		// console.log(typeof e)
 		this.setState({
 		Birthday: e
 		})
@@ -33,14 +33,13 @@ class Forms extends Component {
         //Attempt to addNewUser
         this.props.addUser(newUser)
 
-      this.setState({
-        FirstName: '',
-        LastName: '',
-        Birthday: new Date(),
-        Age: '',
-        Hobby:''
-        
-        })
+     this.setState({
+       FirstName:'',
+       LastName: '',
+       Birthday: new Date(),
+       age: '',
+       Hobby: ''
+     })
     }
     
     handelChange= (e) => {
@@ -60,6 +59,7 @@ class Forms extends Component {
         name="FirstName"
         id="FirstName"
         onChange={this.handelChange}
+         required     
         />
         </Form.Group>
               
@@ -70,6 +70,8 @@ class Forms extends Component {
          name="LastName"
          id="LastName"
          onChange={this.handelChange}
+       required
+              
        />
       </Form.Group>
 
@@ -92,6 +94,7 @@ class Forms extends Component {
        name="Age"
        id="Age"
        onChange={this.handelChange}   
+       required
        />
     </Form.Group>
               
@@ -101,7 +104,8 @@ class Forms extends Component {
     <Form.Control
        name="Hobby"
        id="Hobby"
-       onChange={this.handelChange}
+      onChange={this.handelChange}
+      required
        />
     </Form.Group>
           
