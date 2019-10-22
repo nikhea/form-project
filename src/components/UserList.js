@@ -8,6 +8,7 @@ const UserList = (props) => {
     const users =props.Users.map((user, index) => (
     
       <tr key={index}>
+      <td>{index + 1}</td>
       <td>{user.FirstName}</td>
       <td>{user.LastName}</td>
       <td>{user.Birthday.toLocaleString("us").split(',')[0]}</td>        
@@ -22,6 +23,7 @@ const UserList = (props) => {
         <Table striped>
         <thead>
         <tr>
+        <th>#</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Birthday</th>

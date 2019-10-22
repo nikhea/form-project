@@ -19,7 +19,7 @@ class Users extends Component {
   
      //Attempt to create a addNewUser
      addUser = (newUser) => {
-       let Users = [newUser, ...this.state.Users]
+       let Users = [...this.state.Users, newUser]
       
        this.setState({
        Users
