@@ -1,14 +1,13 @@
 import React,{useEffect} from 'react';
 import { Table, } from 'react-bootstrap'
-import {connect,useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {getUser} from '../actions/userAction'
 import Forms from './Form';
 
-const UserList = ({getUser}) => {
-  
-  // useEffect(props.getUser())
-  useEffect(() => {
-    getUser()
+const UserList = () => {
+  const  dispatch = useDispatch()
+    useEffect(() => {
+    dispatch(getUser())
   })
   const users = useSelector(state =>  state.user.users)
        
@@ -46,4 +45,4 @@ const UserList = ({getUser}) => {
 }
 
 
-export default connect(null,{getUser})(UserList)
+export default UserList;

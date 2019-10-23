@@ -1,10 +1,11 @@
 import React,{useState} from 'react';
 import Calendar from 'react-calendar';
 import { Button,Form } from 'react-bootstrap';
-import { connect} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {addUser} from '../actions/userAction'
 
-const Forms = ({addUser}) => {
+const Forms = () => {
+    const  dispatch = useDispatch()
     const [FirstName, setFirstName] = useState('');
     const [LastName, setLastName] = useState('');
     const [Birthday, setBirthday] = useState(new Date());
@@ -27,7 +28,7 @@ const Forms = ({addUser}) => {
             Age,
             Hobby
     }
-      addUser(newUser)
+      dispatch(addUser(newUser))
       
         setFirstName('');
         setLastName('');
@@ -113,4 +114,4 @@ Create A New User
  
 
 
-export default connect(null,{addUser})(Forms)
+export default Forms;
