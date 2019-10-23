@@ -12,10 +12,7 @@ const Forms = () => {
     const [Age, setAge] = useState('');
     const [Hobby, setHobby] = useState('');
     
-    const handleChange = e => {
-        // console.log(typeof e)
-        setBirthday(e)
-    }
+   
   
 
     const handelSubmite = e => {
@@ -69,7 +66,7 @@ const Forms = () => {
   <Form.Label>Birthday</Form.Label>
 {/*Calender Component using React-Calender  */}
   <Calendar
-    onChange={handleChange}
+    onChange= { e => setBirthday(e) }
     value={Birthday}
     selected={Birthday}
     />
