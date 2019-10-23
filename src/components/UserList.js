@@ -1,12 +1,14 @@
-import React from 'react';
-import { Table } from 'react-bootstrap'
+import React,{useEffect} from 'react';
+import { Table, } from 'react-bootstrap'
+import {connect,useSelector} from 'react-redux'
+import {getUser} from '../actions/userAction'
+import Forms from './Form';
 
-
-const UserList = (props) => {
-
-    // console.log(props.Users)
-    const users =props.Users.map((user, index) => (
-    
+const UserList = () => {
+  // 
+  const users = useSelector(state =>  state.user.users)
+   
+    const user =users.map((user, index) => (
       <tr key={index}>
       <td>{index + 1}</td>
       <td>{user.FirstName}</td>
@@ -16,10 +18,9 @@ const UserList = (props) => {
       <td>{user.Hobby}</td>
       </tr>
     ))
-  
-    return ( 
+     return ( 
         <div>
-            
+           <Forms/>
         <Table striped>
         <thead>
         <tr>
@@ -32,11 +33,13 @@ const UserList = (props) => {
         </tr>
         </thead>
         <tbody>
-        {users}
+        {user}
         </tbody>
         </Table>
             
        </div>
      );
 }
-export default UserList;
+
+
+export default connect(null,{getUser})(UserList)
