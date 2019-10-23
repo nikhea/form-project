@@ -15,13 +15,7 @@ const Forms = ({addUser}) => {
         // console.log(typeof e)
         setBirthday(e)
     }
-    const handelChange = e => {
-        setFirstName(e.target.value)
-        setLastName(e.target.value)
-        
-        setAge(e.target.value)
-        setHobby(e.target.value)
-     }
+  
 
     const handelSubmite = e => {
         e.preventDefault()
@@ -33,7 +27,8 @@ const Forms = ({addUser}) => {
             Age,
             Hobby
     }
-        addUser(newUser)
+      addUser(newUser)
+      
         setFirstName('');
         setLastName('');
         setBirthday(new Date());
@@ -49,7 +44,7 @@ const Forms = ({addUser}) => {
 <Form.Control
   name="FirstName"
   id="FirstName"
-onChange={handelChange}
+  onChange={e => setFirstName(e.target.value)}
     value={FirstName}
    required     
   />
@@ -61,7 +56,7 @@ onChange={handelChange}
 <Form.Control
    name="LastName"
    id="LastName"
-   onChange={handelChange}
+   onChange={e => setLastName(e.target.value)}
    value={LastName}
    required
         
@@ -86,7 +81,7 @@ onChange={handelChange}
  type='number'
  name="Age"
  id="Age"
- onChange={handelChange}
+ onChange={e => setAge(e.target.value)}
   value={Age}            
  required
  />
@@ -98,7 +93,7 @@ onChange={handelChange}
 <Form.Control
    name="Hobby"
    id="Hobby"
-  onChange={handelChange}
+   onChange={e => setHobby(e.target.value)}
   value={Hobby}
   required
  />

@@ -4,10 +4,14 @@ import {connect,useSelector} from 'react-redux'
 import {getUser} from '../actions/userAction'
 import Forms from './Form';
 
-const UserList = () => {
-  // 
+const UserList = ({getUser}) => {
+  
+  // useEffect(props.getUser())
+  useEffect(() => {
+    getUser()
+  })
   const users = useSelector(state =>  state.user.users)
-   
+       
     const user =users.map((user, index) => (
       <tr key={index}>
       <td>{index + 1}</td>
