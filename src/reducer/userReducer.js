@@ -1,4 +1,4 @@
-import {GET_USERS, ADD_USERS} from '../actions/types'
+import {ADD_USERS} from '../actions/types'
 
 
 export const initialState = {
@@ -15,10 +15,6 @@ export const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case GET_USERS:
-            return {
-                ...state
-            }
         case ADD_USERS:
             return {
                 ...state,
