@@ -2,10 +2,12 @@ import React,{useState} from 'react';
 import Calendar from 'react-calendar';
 import { Button,Form } from 'react-bootstrap';
 import {useDispatch} from 'react-redux'
-import {addUser} from '../actions/userAction'
+import { addUser } from '../actions/userAction'
+import uuid from 'uuid'
 
 const Forms = () => {
-    const  dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const [id, setUserId] = useState(uuid.v1());
     const [FirstName, setFirstName] = useState('');
     const [LastName, setLastName] = useState('');
     const [Birthday, setBirthday] = useState(new Date());
@@ -19,6 +21,7 @@ const Forms = () => {
         e.preventDefault()
 
         const newUser = {
+             id,
             FirstName,
             LastName,
             Birthday,

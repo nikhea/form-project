@@ -1,4 +1,4 @@
-import {ADD_USERS } from './types'
+import {ADD_USERS,LOAD_USERS} from './types'
 
 
 export const addUser = (user) => {
@@ -7,3 +7,10 @@ export const addUser = (user) => {
         payload: user
     }
 }
+
+export const loadUsers = (user) => {
+    return{
+        type: LOAD_USERS,
+        payload: user
+    }
+};
